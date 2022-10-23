@@ -9,35 +9,20 @@
 .innerBlock {
   border: 5px solid red;
   padding: 10px;
+  width: 100%;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .gridContainer {
   display: grid;
 
   /* задання сітки*/
-  grid-template-columns: 1fr minmax(auto, 800px) 1fr;
-  grid-template-rows: repeat(3, auto);
-
-  /* ACSII-графіка */
-  grid-template-areas:
-    'a a a'
-    '. b .'
-    'c c c';
-
+  grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
   /* неявні гріди */
+  grid-auto-rows: 100px;
 
-  /* відступи між комірками */
-  /* column-gap: 10px; */
-  /* row-gap: 20px; */
-}
-
-.area:first-child {
-  grid-area: a;
-}
-
-.area:nth-child(2) {
-  grid-area: b;
-}
-.area:nth-child(3) {
-  grid-area: c;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 10px;
 }
